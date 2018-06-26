@@ -12,7 +12,7 @@ namespace Desit.Repositories
         // Define si es inmutable, es decir, una vez creada una fila, no se puede borrar ni modificar
         protected bool Inmutable { get; set; }
 
-        public async Task<IEnumerable<T>> GetAll()
+        public virtual async Task<IEnumerable<T>> GetAll()
         {
             using (DataContext db = new DataContext())
             {
@@ -23,7 +23,7 @@ namespace Desit.Repositories
         }
         
 
-        public async Task Insert(T entity)
+        public virtual async Task Insert(T entity)
         {
             using (DataContext db = new DataContext())
             {
@@ -39,7 +39,7 @@ namespace Desit.Repositories
             }
         }
 
-        public async Task<bool> Update(T entity)
+        public virtual async Task<bool> Update(T entity)
         {
             if (Inmutable) return false;
 
@@ -66,7 +66,7 @@ namespace Desit.Repositories
             }
         }
 
-        public async Task<bool> Delete(T entity)
+        public virtual async Task<bool> Delete(T entity)
         {
             if (Inmutable) return false;
 
@@ -85,7 +85,7 @@ namespace Desit.Repositories
             }
         }
 
-        public async Task<bool> Delete(DataContext db, T entity)
+        public virtual async Task<bool> Delete(DataContext db, T entity)
         {
             if (Inmutable) return false;
 

@@ -37,9 +37,11 @@ namespace Desit
 
             // Agrega repositorios (clases que manejan el modelo)
             services.AddRepositories();
-
-            // Agrego la interrogación secuecial...
+            
+            // Agrega servicios que se mantienen activos en toda la ejecución del servidor
             services.AddSingleton<IntSecuencialService>();
+            services.AddSingleton<AdminManagerService>();
+            services.AddSingleton<CentralManagerService>();
 
             // Agrega soporte a WebSockets
             services.AddWebSocketManager();
