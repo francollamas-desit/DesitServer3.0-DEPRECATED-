@@ -8,10 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using Desit.Models;
 using Microsoft.AspNetCore.Authorization;
 using Desit.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Desit.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class BarriosController : ControllerBase
     {
         private readonly BarrioRepo barrios;
