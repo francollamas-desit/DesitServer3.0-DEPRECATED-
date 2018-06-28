@@ -15,6 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.0-rc2-20180621144030" />
   </ItemGroup>
 
@@ -27,6 +28,11 @@
   <ItemGroup>
     <ProjectReference Include="..\WebSocketManager.Common\WebSocketManager.Common.csproj" />
     <ProjectReference Include="..\WebSocketManager\WebSocketManager.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\models\" />
+    <Folder Include="ClientApp\src\app\services\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
